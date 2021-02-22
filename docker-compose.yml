@@ -8,10 +8,12 @@ services:
       - CLEF_CHAINID
     volumes:
       - $PWD/clef1:/app/data
+    privileged: true
     command: full
   bee-1:
     image: ethersphere/bee:0.5.0
     restart: unless-stopped
+    privileged: true
     environment:
       - BEE_API_ADDR=:1133
       - BEE_BOOTNODE
@@ -59,6 +61,7 @@ services:
   clef-2:
     image: ethersphere/clef:0.4.7
     restart: unless-stopped
+    privileged: true
     environment:
       - CLEF_CHAINID
     volumes:
@@ -67,6 +70,7 @@ services:
   bee-2:
     image: ethersphere/bee:0.5.0
     restart: unless-stopped
+    privileged: true
     environment:
       - BEE_API_ADDR=:1233
       - BEE_BOOTNODE
@@ -114,6 +118,7 @@ services:
   clef-3:
     image: ethersphere/clef:0.4.7
     restart: unless-stopped
+    privileged: true
     environment:
       - CLEF_CHAINID
     volumes:
@@ -122,6 +127,7 @@ services:
   bee-3:
     image: ethersphere/bee:0.5.0
     restart: unless-stopped
+    privileged: true
     environment:
       - BEE_API_ADDR=:1333
       - BEE_BOOTNODE
@@ -159,7 +165,7 @@ services:
     ports:
       - "${API_ADDR:-1333}${BEE_API_ADDR:-:1333}"
       - "${P2P_ADDR:-1334}${BEE_P2P_ADDR:-:1334}"
-      - "${DEBUG_API_ADDR:-1135}${BEE_DEBUG_API_ADDR:-:1335}"
+      - "${DEBUG_API_ADDR:-1335}${BEE_DEBUG_API_ADDR:-:1335}"
     volumes:
       - $PWD/bee3:/home/bee/.bee
     command: start
@@ -169,6 +175,7 @@ services:
   clef-4:
     image: ethersphere/clef:0.4.7
     restart: unless-stopped
+    privileged: true
     environment:
       - CLEF_CHAINID
     volumes:
@@ -177,6 +184,7 @@ services:
   bee-4:
     image: ethersphere/bee:0.5.0
     restart: unless-stopped
+    privileged: true
     environment:
       - BEE_API_ADDR=:1433
       - BEE_BOOTNODE
@@ -224,6 +232,7 @@ services:
   clef-5:
     image: ethersphere/clef:0.4.7
     restart: unless-stopped
+    privileged: true
     environment:
       - CLEF_CHAINID
     volumes:
@@ -232,6 +241,7 @@ services:
   bee-5:
     image: ethersphere/bee:0.5.0
     restart: unless-stopped
+    privileged: true
     environment:
       - BEE_API_ADDR=:1533
       - BEE_BOOTNODE
@@ -279,6 +289,7 @@ services:
   clef-6:
     image: ethersphere/clef:0.4.7
     restart: unless-stopped
+    privileged: true
     environment:
       - CLEF_CHAINID
     volumes:
@@ -287,6 +298,7 @@ services:
   bee-6:
     image: ethersphere/bee:0.5.0
     restart: unless-stopped
+    privileged: true
     environment:
       - BEE_API_ADDR=:16633
       - BEE_BOOTNODE
@@ -334,6 +346,7 @@ services:
   clef-7:
     image: ethersphere/clef:0.4.7
     restart: unless-stopped
+    privileged: true
     environment:
       - CLEF_CHAINID
     volumes:
@@ -342,6 +355,7 @@ services:
   bee-7:
     image: ethersphere/bee:0.5.0
     restart: unless-stopped
+    privileged: true
     environment:
       - BEE_API_ADDR=:1733
       - BEE_BOOTNODE
@@ -389,6 +403,7 @@ services:
   clef-8:
     image: ethersphere/clef:0.4.7
     restart: unless-stopped
+    privileged: true
     environment:
       - CLEF_CHAINID
     volumes:
@@ -397,6 +412,7 @@ services:
   bee-8:
     image: ethersphere/bee:0.5.0
     restart: unless-stopped
+    privileged: true
     environment:
       - BEE_API_ADDR=:1833
       - BEE_BOOTNODE
@@ -444,6 +460,7 @@ services:
   clef-9:
     image: ethersphere/clef:0.4.7
     restart: unless-stopped
+    privileged: true
     environment:
       - CLEF_CHAINID
     volumes:
@@ -452,6 +469,7 @@ services:
   bee-9:
     image: ethersphere/bee:0.5.0
     restart: unless-stopped
+    privileged: true
     environment:
       - BEE_API_ADDR=:1933
       - BEE_BOOTNODE
@@ -499,6 +517,7 @@ services:
   clef-10:
     image: ethersphere/clef:0.4.7
     restart: unless-stopped
+    privileged: true
     environment:
       - CLEF_CHAINID
     volumes:
@@ -507,6 +526,7 @@ services:
   bee-10:
     image: ethersphere/bee:0.5.0
     restart: unless-stopped
+    privileged: true
     environment:
       - BEE_API_ADDR=:11033
       - BEE_BOOTNODE
